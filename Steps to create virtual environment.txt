@@ -1,0 +1,36 @@
+Steps to create virtual environment in jupyter notebook:
+
+	Step 1: Create a virtual environment
+
+		python -m venv name
+
+	Step 2: Activate the virtual environment
+
+		venv\Scripts\activate
+
+		note: for powershell:
+	if you are activating venv in powershell you might getting an error
+	.\new\Scripts\activate : File C:\Users\user\Desktop\python\new\Scripts\Activate.ps1 cannot be loaded because running
+	scripts is disabled on this system. For more information, see about_Execution_Policies at
+	https:/go.microsoft.com/fwlink/?LinkID=135170.
+	At line:1 char:1
+	+ .\new\Scripts\activate
+	+ ~~~~~~~~~~~~~~~~~~~~~~
+    	+ CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    	+ FullyQualifiedErrorId : UnauthorizedAccess
+	
+	to avoid error before using activating command use the following command
+
+		Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+		than activate the venv
+
+	
+	Step 3: Install jupyter kernel for the virtual environment using the following command:
+
+		ipython kernel install --user --name=name
+
+	
+	Step 4: Select the installed kernel when you want to use jupyter notebook in this virtual environment
+		
+	Step 5:	jupyter-kernelspec uninstall venv         (uninstalling jupyter kernel that we have install in current environment)
+
